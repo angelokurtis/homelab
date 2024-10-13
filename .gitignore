@@ -1,2 +1,4 @@
 .idea/
+**/*.lock.hcl
 **/*.tfvars
+**/.terraform/
