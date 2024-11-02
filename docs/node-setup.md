@@ -111,7 +111,33 @@ containerd config default | sudo tee /etcd/containerd/config.toml
 Edit the configuration file to enable Systemd cgroup management.
 
 ```bash
-sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etcd/containerd/config.toml
+sudo sed -i '/\[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options\]/,/\[/ s/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+```
+
+### Enable IP Forwarding
+
+Uncomment the line to enable IPv4 forwarding in the sysctl configuration file:
+
+```bash
+sudo sed -i 's/^#\(net.ipv4.ip_forward=1\)/\1/' /etc/sysctl.conf
+```
+
+### Load Required Kernel Modules
+
+Add the necessary kernel modules for Kubernetes networking.
+
+```bash
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+br_netfilter
+EOF
+```
+
+### Reboot the System
+
+After making these changes, reboot the VM to apply them.
+
+```bash
+sudo reboot
 ```
 
 ## Conclusion
