@@ -44,7 +44,8 @@ everything via the CLI, I used a mix of both CLI and GUI based on a guide I foll
 
 ## Step 2: Create and Configure a Virtual Machine in the GUI
 
-1. In the Proxmox GUI, create a new virtual machine (VM), and assign it an ID (e.g., `9000`).
+1. In the Proxmox GUI, create a new virtual machine (VM), and assign it an ID (e.g., `9000`) and set its name to
+   `ubuntu-2204-template`.
 
 2. In the **OS** tab, select **Do not use any media**.
 
