@@ -52,6 +52,8 @@ everything via the CLI, I used a mix of both CLI and GUI based on a guide I foll
 
 4. In the **Disks** tab, remove the default **scsi0** disk.
 
+5. In the **Memory** tab, you can reduce the memory to **1024** MiB.
+
 ## Step 3: Import the Customized Image via CLI
 
 1. Set up the VM’s serial console and VGA configuration:
