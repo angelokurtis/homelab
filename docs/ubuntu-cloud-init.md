@@ -57,6 +57,9 @@ everything via the CLI, I used a mix of both CLI and GUI based on a guide I foll
 
 6. Go to the **Confirm** tab and click **Finish** to complete the virtual machine setup.
 
+7. Once the VM is created, navigate to the **Hardware** tab. Click **Add** > **CloudInit Drive**, select **local-lvm**
+   for the storage, and then click **Add**.
+
 ## Step 3: Import the Customized Image via CLI
 
 1. Set up the VM’s serial console and VGA configuration:
